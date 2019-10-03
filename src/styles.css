@@ -1,0 +1,40 @@
+@mixin changeColor {
+  @if;
+}
+
+body {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 40em;
+  width: 88%;
+}
+
+/**
+ * Add box sizing to everything
+ * @link http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/**
+ * The Board
+ */
+
+table {
+  border-collapse: collapse;
+}
+
+.game-square {
+  background: none;
+  border: 1px solid black;
+  color: #272727;
+  font-weight: bold;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  font-family: "Helvertica";
+  font-size: 30px;
+}
