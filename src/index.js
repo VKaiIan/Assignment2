@@ -168,18 +168,14 @@ var updateBoard = function(state) {
 
 //change tabledata background color
 //var colors = ["#7CFC00", "#FA8072"];
-var colorone = #7CFC00;
-var colortwo = #FA8072;
+var colorone = "#7CFC00";
+var colortwo = "#FA8072";
 
 var changeBackground = function() {
   //document.body.style.backgroundColor =
   //  colors[Math.floor(Math.random() * colors.length)];
   document.body.style.backgroundColor = colorone;
-  if (colorone) {
-    document.body.style.backgroundColor = colortwo;
-  }
 };
-
 
 //render the board again based on current users turn
 //square is node that was selected
