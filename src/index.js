@@ -166,6 +166,21 @@ var updateBoard = function(state) {
   gboard.innerHTML = buildBoard(state || currentState);
 };
 
+//change tabledata background color
+//var colors = ["#7CFC00", "#FA8072"];
+var colorone = #7CFC00;
+var colortwo = #FA8072;
+
+var changeBackground = function() {
+  //document.body.style.backgroundColor =
+  //  colors[Math.floor(Math.random() * colors.length)];
+  document.body.style.backgroundColor = colorone;
+  if (colorone) {
+    document.body.style.backgroundColor = colortwo;
+  }
+};
+
+
 //render the board again based on current users turn
 //square is node that was selected
 var renderTurn = function(square) {
@@ -178,6 +193,7 @@ var renderTurn = function(square) {
 
   // Render with new state
   updateBoard();
+  changeBackground();
 
   // Update turn
   turn = turn === "X" ? "O" : "X";
@@ -198,6 +214,10 @@ var resetBoard = function() {
 
 // Setup the board
 resetBoard();
+
+//var color = function() {
+//  document.getElementById(".game-square").style.color = "#ffffff";
+//};
 
 // Listen for selections
 document.addEventListener(

@@ -1,7 +1,3 @@
-@mixin changeColor {
-  @if;
-}
-
 body {
   margin-left: auto;
   margin-right: auto;
@@ -30,11 +26,14 @@ table {
 .game-square {
   background: none;
   border: 1px solid black;
-  color: #272727;
   font-weight: bold;
   height: 60px;
   width: 60px;
   text-align: center;
   font-family: "Helvertica";
   font-size: 30px;
+}
+
+td{
+  background: blue:
 }
