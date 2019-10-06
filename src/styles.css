@@ -32,8 +32,24 @@ table {
   text-align: center;
   font-family: "Helvertica";
   font-size: 30px;
+  align-content: center;
 }
 
-td{
-  background: blue:
+.green {
+  background-color: rgb(124, 252, 0);
+}
+
+.red {
+  background-color: rgb(250, 128, 114);
+}
+
+#progress {
+  width: 100%;
+  background-color: grey;
+}
+
+#bar {
+  width: 1%;
+  height: 30px;
+  background-color: green;
 }

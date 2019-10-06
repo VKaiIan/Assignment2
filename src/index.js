@@ -158,23 +158,45 @@ var buildBoard = function(state) {
   return rows;
 };
 
+var myStartFunction = function() {
+  var myVar = setInterval(function() {
+    if (myVar === 10000) {
+      renderTurn();
+    }
+  }, 100000);
+};
+
+//progressbar
+function move() {
+  var elem = document.getElementById("bar");
+  var width = 1;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++;
+      elem.style.width = width + "%";
+    }
+  }
+}
+
 //updates board based on state
 //state is array updates from (optional, defaults to currentState)
 var updateBoard = function(state) {
   var gboard = document.querySelector("#board");
   if (!gboard) return;
   gboard.innerHTML = buildBoard(state || currentState);
+  move();
 };
 
 //change tabledata background color
-//var colors = ["#7CFC00", "#FA8072"];
-var colorone = "#7CFC00";
-var colortwo = "#FA8072";
-
-var changeBackground = function() {
-  //document.body.style.backgroundColor =
-  //  colors[Math.floor(Math.random() * colors.length)];
-  document.body.style.backgroundColor = colorone;
+var changeBackground = function(square) {
+  if (turn === "X") {
+    square.classList.add("green");
+  } else {
+    square.classList.add("red");
+  }
 };
 
 //render the board again based on current users turn
@@ -189,7 +211,8 @@ var renderTurn = function(square) {
 
   // Render with new state
   updateBoard();
-  changeBackground();
+  changeBackground(square);
+  myStartFunction();
 
   // Update turn
   turn = turn === "X" ? "O" : "X";
