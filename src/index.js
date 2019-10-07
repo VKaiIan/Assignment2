@@ -197,7 +197,6 @@ var updateBoard = function(state) {
   if (!gboard) return;
   gboard.innerHTML = buildBoard(state || currentState);
   move();
-  changeBackground();
 };
 
 //render the board again based on current users turn
