@@ -181,15 +181,6 @@ function move() {
   }
 }
 
-//updates board based on state
-//state is array updates from (optional, defaults to currentState)
-var updateBoard = function(state) {
-  var gboard = document.querySelector("#board");
-  if (!gboard) return;
-  gboard.innerHTML = buildBoard(state || currentState);
-  move();
-};
-
 //change tabledata background color
 var changeBackground = function(square) {
   if (turn === "X") {
@@ -197,6 +188,16 @@ var changeBackground = function(square) {
   } else {
     square.classList.add("red");
   }
+};
+
+//updates board based on state
+//state is array updates from (optional, defaults to currentState)
+var updateBoard = function(state) {
+  var gboard = document.querySelector("#board");
+  if (!gboard) return;
+  gboard.innerHTML = buildBoard(state || currentState);
+  move();
+  changeBackground();
 };
 
 //render the board again based on current users turn
@@ -248,6 +249,7 @@ document.addEventListener(
       !event.target.hasAttribute("disabled")
     ) {
       renderTurn(event.target);
+      changeBackground(event.target);
     }
 
     // If #play-again was clicked
