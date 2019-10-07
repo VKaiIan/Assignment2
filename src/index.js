@@ -163,7 +163,7 @@ var myStartFunction = function() {
     if (myVar === 10000) {
       renderTurn();
     }
-  }, 100000);
+  }, 10000);
 };
 
 //progressbar
